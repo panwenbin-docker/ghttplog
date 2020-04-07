@@ -8,7 +8,7 @@ WORKDIR /builder
 RUN git clone https://github.com/panwenbin/ghttplog.git /builder \
   && go build main.go
 
-FROM golang:1.14
+FROM alpine:latest
 
 COPY --from=builder /builder/main /app/ghttplog
 
